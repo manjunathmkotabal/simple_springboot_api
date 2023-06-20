@@ -54,7 +54,8 @@ public class LoadController {
     }
 
     @DeleteMapping("/load/{loadId}")
-    public void deleteLoad(@PathVariable("loadId") Long loadId) {
+    public String deleteLoad(@PathVariable("loadId") Long loadId) {
         loadRepository.deleteById(loadId);
+        return "deleted successfully";
     }
 }
